@@ -8,9 +8,11 @@ with train/validation/test splits that downstream scripts consume.
 from __future__ import annotations
 
 import argparse
+import html
 import logging
 import random
 import re
+import unicodedata
 from pathlib import Path
 from typing import Iterable, List
 
@@ -41,6 +43,18 @@ CONTENTTITLE_PATTERN = re.compile(r"<contenttitle>(.*?)</contenttitle>", re.IGNO
 CONTENT_PATTERN = re.compile(r"<content>(.*?)</content>", re.IGNORECASE | re.DOTALL)
 HTML_TAG_PATTERN = re.compile(r"<[^>]+>")
 WHITESPACE_PATTERN = re.compile(r"\s+")
+DETAIL_SUFFIX_PATTERN = re.compile(r"\[\s*详细\s*\]\s*$")
+
+
+def _normalize_text(text: str) -> str:
+    text = HTML_TAG_PATTERN.sub(" ", text)
+    text = text.replace("\ue40c", "\n")
+    text = html.unescape(text)
+    text = text.replace("\u00A0", " ").replace("\u3000", " ")
+    text = unicodedata.normalize("NFKC", text)
+    text = DETAIL_SUFFIX_PATTERN.sub("", text)
+    text = WHITESPACE_PATTERN.sub(" ", text)
+    return text.strip()
 
 
 def extract_text(doc_str: str) -> str | None:
@@ -52,12 +66,7 @@ def extract_text(doc_str: str) -> str | None:
     merged = "\n".join(part for part in (title, content) if part)
     if not merged:
         return None
-    # Drop residual markup and collapse whitespace
-    merged = HTML_TAG_PATTERN.sub(" ", merged)
-    merged = merged.replace("&nbsp;", " ")
-    merged = merged.replace("&amp;", "&")
-    merged = WHITESPACE_PATTERN.sub(" ", merged)
-    cleaned = merged.strip()
+    cleaned = _normalize_text(merged)
     if len(cleaned) < 32:
         return None
     return cleaned
