@@ -1,0 +1,5 @@
+torch>=2.0.0
+numpy>=1.23
+pyyaml>=5.4
+sentencepiece>=0.1.95
+tqdm>=4.64

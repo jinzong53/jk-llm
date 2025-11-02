@@ -1,0 +1,28 @@
+"""Common utilities for configuration handling and reproducibility."""
+
+from __future__ import annotations
+
+import random
+from pathlib import Path
+from typing import Any, Dict
+
+import numpy as np
+import torch
+import yaml
+
+
+def load_yaml(path: Path) -> Dict[str, Any]:
+    with path.open("r", encoding="utf-8") as handle:
+        return yaml.safe_load(handle)
+
+
+def set_seed(seed: int) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+
+def count_parameters(module: torch.nn.Module) -> int:
+    return sum(p.numel() for p in module.parameters())

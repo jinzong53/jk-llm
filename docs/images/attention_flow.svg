@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="220" viewBox="0 0 640 220">
+  <style>
+    .title { font: 16px sans-serif; fill: #111 }
+    .label { font: 12px sans-serif; fill: #222 }
+    .box { fill:#f6f9ff; stroke:#3b82f6; stroke-width:1.5 }
+    .arrow { stroke:#333; stroke-width:1.6; fill:none; marker-end:url(#arrowhead)}
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  <text x="16" y="24" class="title">注意力（Q,K,V）数据流示意</text>
+
+  <!-- Q,K,V boxes -->
+  <rect x="40" y="60" width="120" height="40" class="box"/>
+  <text x="100" y="86" text-anchor="middle" class="label">Q (queries)</text>
+
+  <rect x="40" y="120" width="120" height="40" class="box"/>
+  <text x="100" y="146" text-anchor="middle" class="label">K (keys)</text>
+
+  <rect x="40" y="180" width="120" height="40" class="box"/>
+  <text x="100" y="206" text-anchor="middle" class="label">V (values)</text>
+
+  <!-- Attention block -->
+  <rect x="240" y="90" width="220" height="120" rx="8" ry="8" fill="#fff9f0" stroke="#ff8c00" stroke-width="1.6"/>
+  <text x="350" y="116" text-anchor="middle" class="label" font-weight="bold">Scaled Dot-Product Attention</text>
+  <text x="350" y="136" text-anchor="middle" class="label">softmax(QK^T / sqrt(d_k)) V</text>
+
+  <!-- Arrows from Q,K,V to attention -->
+  <path d="M160 80 L240 110" class="arrow"/>
+  <path d="M160 140 L240 130" class="arrow"/>
+  <path d="M160 200 L240 170" class="arrow"/>
+
+  <!-- Output -->
+  <rect x="500" y="120" width="120" height="40" class="box"/>
+  <text x="560" y="146" text-anchor="middle" class="label">O (output)</text>
+  <path d="M460 150 L500 140" class="arrow"/>
+
+  <!-- small formula box -->
+  <text x="240" y="74" class="label">公式：</text>
+  <text x="300" y="74" class="label">Attention(Q,K,V)=softmax( Q K^T / √d_k ) V</text>
+
+</svg>

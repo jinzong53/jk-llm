@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="340" viewBox="0 0 920 340">
+  <style>
+    .title{font:18px sans-serif;fill:#111}
+    .label{font:13px sans-serif;fill:#111}
+    .box{fill:#f7f7ff;stroke:#333;stroke-width:1.4}
+    .head{fill:#e8f3ff;stroke:#1f77b4}
+    .arrow{stroke:#333;stroke-width:2;marker-end:url(#a)}
+  </style>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" class="title">Multi-Head Attention（多头注意力）</text>
+
+  <rect x="20" y="60" width="260" height="80" class="box" rx="6"/>
+  <text x="40" y="100" class="label">Input X: (B, T, d_model)</text>
+
+  <!-- QKV projections -->
+  <rect x="320" y="30" width="160" height="40" class="box" rx="6"/>
+  <text x="340" y="56" class="label">W_q / W_k / W_v 投影</text>
+
+  <line x1="280" y1="100" x2="320" y2="50" class="arrow"/>
+
+  <!-- heads -->
+  <g transform="translate(520,30)">
+    <rect x="0" y="0" width="72" height="72" class="head" rx="6"/>
+    <rect x="86" y="0" width="72" height="72" class="head" rx="6"/>
+    <rect x="172" y="0" width="72" height="72" class="head" rx="6"/>
+    <text x="10" y="92" class="label">head_1</text>
+    <text x="96" y="92" class="label">head_2</text>
+    <text x="182" y="92" class="label">head_H</text>
+
+    <rect x="260" y="10" width="200" height="60" class="box" rx="6"/>
+    <text x="280" y="44" class="label">Concat(heads) -> W_o -> Output</text>
+  </g>
+
+  <line x1="480" y1="66" x2="520" y2="66" class="arrow"/>
+  <text x="40" y="140" class="label">每个 head: Attention(QW_i^Q, KW_i^K, VW_i^V)</text>
+  <text x="40" y="160" class="label">d_k = d_v = d_model / H</text>
+
+  <text x="20" y="300" class="label">说明：多头并行学习不同子空间的注意力，然后拼接并线性变换回 d_model 维度。</text>
+</svg>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="260" viewBox="0 0 800 260">
+  <style>
+    .box{fill:#f8f9fa;stroke:#2b2f33;stroke-width:1.6}
+    .title{font:18px sans-serif;fill:#111}
+    .label{font:14px sans-serif;fill:#111}
+    .arrow{stroke:#2b2f33;stroke-width:2;marker-end:url(#arrowhead)}
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2b2f33"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" class="title">Attention — Query / Key / Value（示意）</text>
+
+  <!-- Q box -->
+  <rect x="30" y="60" width="170" height="120" class="box" rx="8"/>
+  <text x="55" y="90" class="label">Query (Q)</text>
+  <text x="55" y="115" class="label">shape: (B, T_q, d_k)</text>
+
+  <!-- K box -->
+  <rect x="300" y="30" width="170" height="100" class="box" rx="8"/>
+  <text x="330" y="60" class="label">Key (K)</text>
+  <text x="330" y="85" class="label">shape: (B, T_k, d_k)</text>
+
+  <!-- V box -->
+  <rect x="300" y="140" width="170" height="100" class="box" rx="8"/>
+  <text x="330" y="170" class="label">Value (V)</text>
+  <text x="330" y="195" class="label">shape: (B, T_k, d_v)</text>
+
+  <!-- scores box -->
+  <rect x="520" y="60" width="220" height="120" class="box" rx="8"/>
+  <text x="560" y="90" class="label">Scores = Q K^T / sqrt(d_k)</text>
+  <text x="560" y="115" class="label">softmax -> weights</text>
+  <text x="560" y="140" class="label">Output = weights * V</text>
+
+  <!-- arrows -->
+  <line x1="200" y1="120" x2="300" y2="120" class="arrow"/>
+  <line x1="200" y1="100" x2="520" y2="110" class="arrow"/>
+  <line x1="470" y1="160" x2="520" y2="150" class="arrow"/>
+  <line x1="470" y1="150" x2="520" y2="160" class="arrow"/>
+
+  <!-- small note -->
+  <text x="20" y="240" class="label">说明：Q 与 K 计算相似度，softmax 得到权重，再与 V 加权求和得到输出。</text>
+</svg>

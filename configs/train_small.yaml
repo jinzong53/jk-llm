@@ -1,0 +1,33 @@
+seed: 42
+
+data:
+  dataset_dir: artifacts/datasets
+  block_size: 512
+  batch_size: 16
+  num_workers: 4
+
+model:
+  vocab_size: 32000
+  n_ctx: 512
+  n_embd: 768
+  n_layer: 12
+  n_head: 12
+  dropout: 0.1
+  bias: false
+  layer_norm_eps: 1.0e-5
+
+optimizer:
+  lr: 0.0003
+  weight_decay: 0.1
+
+training:
+  max_steps: 20000
+  warmup_steps: 1000
+  eval_interval: 1000
+  log_interval: 100
+  gradient_accumulation_steps: 4
+  mixed_precision: true
+  grad_clip: 1.0
+  checkpoint_dir: checkpoints
+  checkpoint_interval: 5000
+  max_eval_batches: 100

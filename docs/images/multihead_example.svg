@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240">
+  <style>
+    .title { font: 14px sans-serif; fill: #111 }
+    .label { font: 12px sans-serif; fill: #222 }
+  </style>
+  <text x="20" y="20" class="title">多头注意力示意（Head 1 / Head 2 / Head 3）</text>
+  <!-- three small heatmaps side by side -->
+  <g transform="translate(20,40)">
+    <!-- Head 1 (local focused) -->
+    <text x="0" y="-6" class="label">Head 1 (local)</text>
+    <g transform="translate(0,0)">
+      <!-- 6x6 small grid -->
+      <!-- draw a pattern that concentrates on diagonal -->
+      <!-- cell size 24 -->
+      <!-- head1 diagonal darker -->
+      <g>
+        <!-- generate cells manually -->
+        <!-- row 0 -->
+        <rect x="0" y="0" width="24" height="24" fill="#fee5d9" stroke="#fff"/>
+        <rect x="24" y="0" width="24" height="24" fill="#fcae91" stroke="#fff"/>
+        <rect x="48" y="0" width="24" height="24" fill="#fb6a4a" stroke="#fff"/>
+        <rect x="72" y="0" width="24" height="24" fill="#cb181d" stroke="#fff"/>
+        <rect x="96" y="0" width="24" height="24" fill="#99000d" stroke="#fff"/>
+        <rect x="120" y="0" width="24" height="24" fill="#4d0006" stroke="#fff"/>
+        <!-- row 1 -->
+        <rect x="0" y="24" width="24" height="24" fill="#fef0d9" stroke="#fff"/>
+        <rect x="24" y="24" width="24" height="24" fill="#fc8d59" stroke="#fff"/>
+        <rect x="48" y="24" width="24" height="24" fill="#ef6548" stroke="#fff"/>
+        <rect x="72" y="24" width="24" height="24" fill="#d7301f" stroke="#fff"/>
+        <rect x="96" y="24" width="24" height="24" fill="#b30000" stroke="#fff"/>
+        <rect x="120" y="24" width="24" height="24" fill="#7f0000" stroke="#fff"/>
+        <!-- row 2 -->
+        <rect x="0" y="48" width="24" height="24" fill="#edf8fb" stroke="#fff"/>
+        <rect x="24" y="48" width="24" height="24" fill="#8da0cb" stroke="#fff"/>
+        <rect x="48" y="48" width="24" height="24" fill="#6b86b0" stroke="#fff"/>
+        <rect x="72" y="48" width="24" height="24" fill="#4a67a0" stroke="#fff"/>
+        <rect x="96" y="48" width="24" height="24" fill="#153467" stroke="#fff"/>
+        <rect x="120" y="48" width="24" height="24" fill="#071132" stroke="#fff"/>
+        <!-- row 3 -->
+        <rect x="0" y="72" width="24" height="24" fill="#f7fcf5" stroke="#fff"/>
+        <rect x="24" y="72" width="24" height="24" fill="#7fcdbb" stroke="#fff"/>
+        <rect x="48" y="72" width="24" height="24" fill="#41b6c4" stroke="#fff"/>
+        <rect x="72" y="72" width="24" height="24" fill="#1d91c0" stroke="#fff"/>
+        <rect x="96" y="72" width="24" height="24" fill="#225ea8" stroke="#fff"/>
+        <rect x="120" y="72" width="24" height="24" fill="#0c2c84" stroke="#fff"/>
+        <!-- row 4 -->
+        <rect x="0" y="96" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <rect x="24" y="96" width="24" height="24" fill="#fdd49e" stroke="#fff"/>
+        <rect x="48" y="96" width="24" height="24" fill="#fdbb84" stroke="#fff"/>
+        <rect x="72" y="96" width="24" height="24" fill="#fc8d59" stroke="#fff"/>
+        <rect x="96" y="96" width="24" height="24" fill="#ef6548" stroke="#fff"/>
+        <rect x="120" y="96" width="24" height="24" fill="#d7301f" stroke="#fff"/>
+        <!-- row 5 -->
+        <rect x="0" y="120" width="24" height="24" fill="#f7fbff" stroke="#fff"/>
+        <rect x="24" y="120" width="24" height="24" fill="#9ecae1" stroke="#fff"/>
+        <rect x="48" y="120" width="24" height="24" fill="#6baed6" stroke="#fff"/>
+        <rect x="72" y="120" width="24" height="24" fill="#3182bd" stroke="#fff"/>
+        <rect x="96" y="120" width="24" height="24" fill="#08519c" stroke="#fff"/>
+        <rect x="120" y="120" width="24" height="24" fill="#08306b" stroke="#fff"/>
+      </g>
+    </g>
+    <!-- Head 2 (global) -->
+    <g transform="translate(160,0)">
+      <text x="0" y="-6" class="label">Head 2 (global)</text>
+      <!-- draw a more uniform grid with a central dark spot -->
+      <g>
+        <!-- use a simpler pattern for brevity -->
+        <rect x="0" y="0" width="24" height="24" fill="#f7fbff" stroke="#fff"/>
+        <rect x="24" y="0" width="24" height="24" fill="#deebf7" stroke="#fff"/>
+        <rect x="48" y="0" width="24" height="24" fill="#c6dbef" stroke="#fff"/>
+        <rect x="72" y="0" width="24" height="24" fill="#9ecae1" stroke="#fff"/>
+        <rect x="96" y="0" width="24" height="24" fill="#6baed6" stroke="#fff"/>
+        <rect x="120" y="0" width="24" height="24" fill="#3182bd" stroke="#fff"/>
+        <!-- repeat rows quickly -->
+        <!-- center dark spot -->
+        <rect x="48" y="48" width="24" height="24" fill="#225ea8" stroke="#fff"/>
+        <rect x="72" y="48" width="24" height="24" fill="#225ea8" stroke="#fff"/>
+        <rect x="48" y="72" width="24" height="24" fill="#225ea8" stroke="#fff"/>
+        <rect x="72" y="72" width="24" height="24" fill="#225ea8" stroke="#fff"/>
+        <!-- remaining cells light -->
+        <rect x="0" y="24" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <rect x="24" y="24" width="24" height="24" fill="#fee8c8" stroke="#fff"/>
+        <rect x="96" y="24" width="24" height="24" fill="#fdd49e" stroke="#fff"/>
+        <rect x="120" y="24" width="24" height="24" fill="#fdbb84" stroke="#fff"/>
+        <rect x="0" y="48" width="24" height="24" fill="#edf8fb" stroke="#fff"/>
+        <rect x="24" y="48" width="24" height="24" fill="#b3cde3" stroke="#fff"/>
+        <rect x="96" y="48" width="24" height="24" fill="#6baed6" stroke="#fff"/>
+        <rect x="120" y="48" width="24" height="24" fill="#3182bd" stroke="#fff"/>
+      </g>
+    </g>
+    <!-- Head 3 (sparse pattern) -->
+    <g transform="translate(320,0)">
+      <text x="0" y="-6" class="label">Head 3 (sparse)</text>
+      <g>
+        <!-- mostly light with a few dark spots -->
+        <rect x="0" y="0" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <rect x="24" y="0" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <rect x="48" y="0" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <rect x="72" y="0" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <rect x="96" y="0" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <rect x="120" y="0" width="24" height="24" fill="#fff7ec" stroke="#fff"/>
+        <!-- dark spots scattered -->
+        <rect x="48" y="24" width="24" height="24" fill="#cb181d" stroke="#fff"/>
+        <rect x="96" y="48" width="24" height="24" fill="#cb181d" stroke="#fff"/>
+        <rect x="24" y="72" width="24" height="24" fill="#cb181d" stroke="#fff"/>
+      </g>
+    </g>
+  </g>
+  <text x="20" y="220" class="label">每个小方格表示 Query（行）对 Key（列）的注意力权重；不同 Head 显示不同模式。</text>
+</svg>

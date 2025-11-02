@@ -1,0 +1,33 @@
+# Data and artifacts (large files, not for sharing)
+# artifacts/
+corpus/
+
+# Training logs and checkpoints
+*.log
+# checkpoints/
+*.pt
+*.dat
+*.json
+*.npy
+*.model
+*.vocab
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+
+
+# Environment files
+.env
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

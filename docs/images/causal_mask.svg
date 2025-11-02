@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="260" viewBox="0 0 480 260">
+  <style>
+    .title { font: 14px sans-serif; fill: #111 }
+    .label { font: 12px sans-serif; fill: #222 }
+  </style>
+  <text x="12" y="22" class="title">因果掩码（Causal Mask）示意</text>
+  <text x="12" y="44" class="label">掩码定义：mask_{i,j} = -∞ if j &gt; i（Query 在行, Key 在列）</text>
+
+  <g transform="translate(40,80)">
+    <!-- draw 8x8 matrix -->
+    <g>
+      <!-- draw cells -->
+      <!-- diagonal and lower triangle light, upper triangle dark -->
+      <!-- cell size 28 -->
+      <!-- rows -->
+      <!-- row 0 -->
+      <rect x="0" y="0" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="28" y="0" width="28" height="28" fill="#d9d9d9" stroke="#ccc"/>
+      <rect x="56" y="0" width="28" height="28" fill="#bfbfbf" stroke="#ccc"/>
+      <rect x="84" y="0" width="28" height="28" fill="#9f9f9f" stroke="#ccc"/>
+      <rect x="112" y="0" width="28" height="28" fill="#7f7f7f" stroke="#ccc"/>
+      <rect x="140" y="0" width="28" height="28" fill="#606060" stroke="#ccc"/>
+      <rect x="168" y="0" width="28" height="28" fill="#404040" stroke="#ccc"/>
+      <rect x="196" y="0" width="28" height="28" fill="#202020" stroke="#ccc"/>
+      <!-- row 1 -->
+      <rect x="0" y="28" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="28" y="28" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="56" y="28" width="28" height="28" fill="#d9d9d9" stroke="#ccc"/>
+      <rect x="84" y="28" width="28" height="28" fill="#bfbfbf" stroke="#ccc"/>
+      <rect x="112" y="28" width="28" height="28" fill="#9f9f9f" stroke="#ccc"/>
+      <rect x="140" y="28" width="28" height="28" fill="#7f7f7f" stroke="#ccc"/>
+      <rect x="168" y="28" width="28" height="28" fill="#606060" stroke="#ccc"/>
+      <rect x="196" y="28" width="28" height="28" fill="#404040" stroke="#ccc"/>
+      <!-- row 2 -->
+      <rect x="0" y="56" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="28" y="56" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="56" y="56" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="84" y="56" width="28" height="28" fill="#d9d9d9" stroke="#ccc"/>
+      <rect x="112" y="56" width="28" height="28" fill="#bfbfbf" stroke="#ccc"/>
+      <rect x="140" y="56" width="28" height="28" fill="#9f9f9f" stroke="#ccc"/>
+      <rect x="168" y="56" width="28" height="28" fill="#7f7f7f" stroke="#ccc"/>
+      <rect x="196" y="56" width="28" height="28" fill="#606060" stroke="#ccc"/>
+      <!-- row 3 -->
+      <rect x="0" y="84" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="28" y="84" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="56" y="84" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="84" y="84" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="112" y="84" width="28" height="28" fill="#d9d9d9" stroke="#ccc"/>
+      <rect x="140" y="84" width="28" height="28" fill="#bfbfbf" stroke="#ccc"/>
+      <rect x="168" y="84" width="28" height="28" fill="#9f9f9f" stroke="#ccc"/>
+      <rect x="196" y="84" width="28" height="28" fill="#7f7f7f" stroke="#ccc"/>
+      <!-- row 4 -->
+      <rect x="0" y="112" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="28" y="112" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="56" y="112" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="84" y="112" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="112" y="112" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="140" y="112" width="28" height="28" fill="#d9d9d9" stroke="#ccc"/>
+      <rect x="168" y="112" width="28" height="28" fill="#bfbfbf" stroke="#ccc"/>
+      <rect x="196" y="112" width="28" height="28" fill="#9f9f9f" stroke="#ccc"/>
+      <!-- row 5 -->
+      <rect x="0" y="140" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="28" y="140" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="56" y="140" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="84" y="140" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="112" y="140" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="140" y="140" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="168" y="140" width="28" height="28" fill="#d9d9d9" stroke="#ccc"/>
+      <rect x="196" y="140" width="28" height="28" fill="#bfbfbf" stroke="#ccc"/>
+      <!-- row 6 -->
+      <rect x="0" y="168" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="28" y="168" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="56" y="168" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="84" y="168" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="112" y="168" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="140" y="168" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="168" y="168" width="28" height="28" fill="#e6f7ff" stroke="#ccc"/>
+      <rect x="196" y="168" width="28" height="28" fill="#d9d9d9" stroke="#ccc"/>
+    </g>
+    <text x="0" y="210" class="label">浅色 = 可见（allowed） ； 深色 = 被 mask（被设置为 -inf）</text>
+  </g>
+</svg>
