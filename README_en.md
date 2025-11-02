@@ -114,6 +114,10 @@ pip install -r requirements.txt
 
 ## 📚 Data Preparation
 
+### 0️⃣ Download dataset (optional)
+
+You can download the news dataset from [Baidu AI Studio](https://aistudio.baidu.com/datasetdetail/83697). After downloading, the dataset is in .dat format, you need to convert it to .txt format and place it in the `artifacts/corpus/` directory as `train.txt`, `val.txt`, and `test.txt` files.
+
 ### 1️⃣ Prepare raw corpus (add your own)
 
 ```

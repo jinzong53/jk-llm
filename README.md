@@ -1,9 +1,9 @@
 
 <h1 align="center">🚀 JK-LLM：从零构建简易大语言模型</h1>
 
-<p align="center">
+<!-- <p align="center">
 [English Version](README_en.md) | [中文版本](README.md)
-</p>
+</p> -->
 
 <p align="center">
 使用 PyTorch 实现 Decoder-Only Transformer（GPT-like）模型，从零开始理解 LLM 的内部结构与训练过程
@@ -29,21 +29,18 @@
 * [训练与推理](#训练与推理)
 * [实验指标](#实验指标)
 * [未来计划](#未来计划)
-* [致谢与参考](#致谢与参考)
-* [贡献与许可证](#贡献与许可证)
 
 ---
 
 ## 🎯 项目简介
 
-**JK-LLM** 是一个**教学向**的 LLM 代码仓库，旨在帮助你：
+**JK-LLM** 是一个**简易向**的 LLM 代码仓库，旨在帮助你：
 
-* 理解 LLM 的工作原理
+* 理解最基础的 LLM 的工作原理
 * 掌握 Transformer Decoder 结构
 * 学会训练、评估和推理流程
-* 具备搭建 GPT-like 模型的能力
+* 模拟 GPT-like 模型对话
 
-> **目标：** 用最清晰的方式构建一个「可运行、可学习、可扩展」的 LLM 示例。
 
 ---
 
@@ -114,6 +111,10 @@ pip install -r requirements.txt
 ---
 
 ## 📚 数据准备
+
+### 0️⃣ 下载数据集（可选）
+
+你可以从 [百度AI Studio](https://aistudio.baidu.com/datasetdetail/83697) 下载新闻数据集。下载后，数据集为.dat格式，你需要将其转换为.txt格式并放入 `artifacts/corpus/` 目录下的 `train.txt`、`val.txt` 和 `test.txt` 文件中。
 
 ### 1️⃣ 准备原始语料（自行放入）
 
